@@ -1,0 +1,1 @@
+After analysing the dataset, this is the business with good customer base who purchahed products moderaltely. 50% of the customers spend within $160 to $489 and placed consecutive orders with 6 to 70 days. so the customers who hasn't purchased with 2 x 69 = 138 days are most likely churned. 

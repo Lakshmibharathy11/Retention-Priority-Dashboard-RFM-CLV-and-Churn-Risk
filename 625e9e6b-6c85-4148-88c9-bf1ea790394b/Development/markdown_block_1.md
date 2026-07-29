@@ -1,0 +1,1 @@
+Based on the Data profiling - 22% of the customer ID is missing. For my analyis it is unusable so i will drop those rows. For my case it is not necessary to fill it with unknown and rows with Quantity <=0, Prie<=0 and Cancellation (unsuccesfull transaction or some issue) also should be dropped which doen't provide any new information or signal that strngthren my prediction

@@ -1,0 +1,1 @@
+Calculated recency - using the latest date from the EDA as a reference date and calculating the number of days elapsed since the last purchase. , Frequency - my counting number of unique invoice, and monetary - how much does this customer spend on average and ranked each features by dividing it into quartiles and assigned the scores. 4-best, 1- lowest

@@ -1,0 +1,1 @@
+In order to predict retention priority list we need to find customer lifetime value (LTV) to find who are worth retaining 

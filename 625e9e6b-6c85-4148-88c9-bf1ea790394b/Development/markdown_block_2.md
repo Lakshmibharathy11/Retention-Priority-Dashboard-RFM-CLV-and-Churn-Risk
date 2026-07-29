@@ -1,0 +1,1 @@
+Feature Engineering -  RFM - Recency, Frequency and Monetary in order to build a churn prediction model

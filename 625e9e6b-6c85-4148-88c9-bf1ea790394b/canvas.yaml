@@ -1,0 +1,226 @@
+id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+name: 'Retention Priority Dashboard: RFM, CLV, and Churn Risk'
+project_id: 846411c3-f8e7-4aa0-b4a7-c7841bc72adc
+global_imports: []
+python_global_imports: ''
+r_global_imports: ''
+requirements: []
+linux_packages: []
+environment_variables: []
+is_public: false
+organization_id: 4046d6db-56f2-4697-a0ff-ee68ee023764
+layers:
+- blocks:
+  - auto_size: false
+    canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+    compute_settings: null
+    description: Explains the need to calculate customer lifetime value (LTV) as the
+      foundation for identifying high-priority customers to target for retention efforts.
+    height: 1000
+    id: 0d70a989-12ee-4643-aabb-8ed70d48719c
+    layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+    name: markdown_block_4
+    parent_id: null
+    properties: {}
+    status: 1
+    type: 4
+    variables: null
+    width: 1600
+    x: 4000
+    y: 2500
+  - auto_size: false
+    canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+    compute_settings: null
+    description: Create RFM (Recency, Frequency, Monetary) features to identify customer
+      segments and build a churn prediction model by analyzing customer purchase behavior
+      patterns.
+    height: 1000
+    id: 2607920f-957f-4601-b412-96975fef721f
+    layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+    name: markdown_block_2
+    parent_id: null
+    properties: {}
+    status: 1
+    type: 4
+    variables: null
+    width: 1600
+    x: 4000
+    y: 1000
+  - auto_size: false
+    canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+    compute_settings: null
+    description: 'Performs a comprehensive data quality assessment on raw retail transaction
+      data: counts rows/columns, data types, missing values, duplicates, and flags
+      invalid records (zero/negative quantities, prices, missing customer IDs, cancellations).'
+    height: 1000
+    id: 46ee48e3-81a6-4da1-a440-ae7e9259290a
+    layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+    name: "Step 1 \u2014 Data Profiling & Quality Assessment"
+    parent_id: null
+    properties: {}
+    status: 3
+    type: 1
+    variables: null
+    width: 1600
+    x: 2000
+    y: 0
+  - auto_size: false
+    canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+    compute_settings: null
+    description: Loads the UCI Online Retail II dataset and defines shared column
+      constants (revenue, customer ID, invoice, date, quantity, price, stock code).
+      Attempts to parse dates and clean missing customer IDs. Currently failing due
+      to date format parsing error.
+    height: 1000
+    id: 5d1db65a-6542-4758-b946-e725e4ea5503
+    layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+    name: Data Load
+    parent_id: null
+    properties: {}
+    status: 3
+    type: 1
+    variables: null
+    width: 1600
+    x: 0
+    y: 0
+  - auto_size: false
+    canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+    compute_settings: null
+    description: Identifies churn risk based on customer spending patterns ($160-$489)
+      and purchase frequency (6-70 days). Flags customers inactive for 138+ days as
+      likely churned.
+    height: 1000
+    id: 62220cb9-db2e-4d88-b195-d4f0fb42ae47
+    layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+    name: markdown_block
+    parent_id: null
+    properties: {}
+    status: 1
+    type: 4
+    variables: null
+    width: 1600
+    x: 4000
+    y: 500
+  - auto_size: false
+    canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+    compute_settings: null
+    description: Cleans transaction data by removing nulls, duplicates, and invalid
+      records; computes RFM (Recency, Frequency, Monetary) metrics for each customer;
+      assigns quartile scores and segments them into 8 strategic groups (Champions,
+      Loyal, At Risk, Lost, etc.); generates summary statistics and visualizations
+      showing customer distribution and value by segment.
+    height: 1000
+    id: 8c886c1c-8db8-45a4-a487-332e1307f52f
+    layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+    name: rfm_analysis_segmentation
+    parent_id: null
+    properties: {}
+    status: 3
+    type: 1
+    variables: null
+    width: 1600
+    x: 4000
+    y: 1500
+  - auto_size: false
+    canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+    compute_settings: null
+    description: 'Justifies data cleaning strategy: Remove rows with missing customer
+      IDs (22%), zero/negative quantities or prices, and cancelled transactions to
+      create a clean dataset for predictive analysis.'
+    height: 1000
+    id: b19e5339-c1bf-4af5-a254-38d73dd86f6d
+    layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+    name: markdown_block_1
+    parent_id: null
+    properties: {}
+    status: 1
+    type: 4
+    variables: null
+    width: 1600
+    x: 4000
+    y: -500
+  - auto_size: false
+    canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+    compute_settings: null
+    description: 'Analyzes clean transaction data (no cancellations, positive qty/price,
+      known customers) to uncover key insights: date range, unique counts, order value
+      & frequency distributions, inter-purchase gaps (with churn threshold), monthly
+      revenue trends, and revenue concentration. Generates 4 charts visualizing order
+      frequency, value, monthly revenue, and customer purchase patterns.'
+    height: 1000
+    id: e528742b-54ba-4a6b-9ee9-b8fd4564d317
+    layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+    name: "Step 2 \u2014 Exploratory Data Analysis"
+    parent_id: null
+    properties: {}
+    status: 3
+    type: 1
+    variables: null
+    width: 1600
+    x: 4000
+    y: 0
+  - auto_size: false
+    canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+    compute_settings: null
+    description: 'Explains RFM (Recency, Frequency, Monetary) customer segmentation
+      methodology: calculates days since last purchase, counts unique invoices per
+      customer, measures average spend, and ranks each metric in quartiles (4=best,
+      1=lowest).'
+    height: 1000
+    id: e9f21a27-f170-4f92-baa6-f467a61749e4
+    layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+    name: markdown_block_3
+    parent_id: null
+    properties: {}
+    status: 1
+    type: 4
+    variables: null
+    width: 1600
+    x: 4000
+    y: 2000
+  canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  edges:
+  - canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+    id: 0aeafc78-3bf4-4dad-9f2c-5bdf9ef99206
+    layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+    source: e528742b-54ba-4a6b-9ee9-b8fd4564d317
+    target: 62220cb9-db2e-4d88-b195-d4f0fb42ae47
+  - canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+    id: 394ddc37-d03a-4e3d-9b1b-fec4891dff8c
+    layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+    source: b19e5339-c1bf-4af5-a254-38d73dd86f6d
+    target: e528742b-54ba-4a6b-9ee9-b8fd4564d317
+  - canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+    id: 4bff8abc-db74-4c6e-ab3f-154a96ddd44c
+    layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+    source: 46ee48e3-81a6-4da1-a440-ae7e9259290a
+    target: b19e5339-c1bf-4af5-a254-38d73dd86f6d
+  - canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+    id: 72546fd0-d0c8-4977-a332-347c45b5f77b
+    layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+    source: 62220cb9-db2e-4d88-b195-d4f0fb42ae47
+    target: 2607920f-957f-4601-b412-96975fef721f
+  - canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+    id: afeee689-f2ff-42e3-b689-eb514d51d94a
+    layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+    source: 5d1db65a-6542-4758-b946-e725e4ea5503
+    target: 46ee48e3-81a6-4da1-a440-ae7e9259290a
+  - canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+    id: b9e40369-6a5b-4105-8bad-678467466287
+    layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+    source: e9f21a27-f170-4f92-baa6-f467a61749e4
+    target: 0d70a989-12ee-4643-aabb-8ed70d48719c
+  - canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+    id: f0ec933c-a1d6-441b-9c1b-60c307ce4b39
+    layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+    source: 2607920f-957f-4601-b412-96975fef721f
+    target: 8c886c1c-8db8-45a4-a487-332e1307f52f
+  - canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+    id: ff9cab5d-57f0-4884-b15f-5bcef4eb6f5c
+    layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+    source: 8c886c1c-8db8-45a4-a487-332e1307f52f
+    target: e9f21a27-f170-4f92-baa6-f467a61749e4
+  id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  name: Development
+  type: 1
+assets: []
