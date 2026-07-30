@@ -1,0 +1,1 @@
+Now that we have enough features to build the regression model. i am going to calculate churn probability using logistic regression model and finally will measure the Expected revenue at risk. 

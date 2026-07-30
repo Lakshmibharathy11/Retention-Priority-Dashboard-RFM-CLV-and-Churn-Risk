@@ -1,0 +1,1 @@
+Frequency is the dominant predictor of churn because it directly reflects ongoing engagement timing, while Monetary reflects historical value that doesn't necessarily indicate recent activity. A formal multicollinearity check (VIF = 1.65 for both features) confirmed this is a genuine relationship, not a statistical distortion.

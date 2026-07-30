@@ -1,1 +1,1 @@
-In order to predict retention priority list we need to find customer lifetime value (LTV) to find who are worth retaining 
+In order to predict retention priority list we need to find customer lifetime value (CLV) to find who are worth retaining. AS RFM labels the customer , but it can't tell how much does a customer contribute towards our revenue if they behave in this way. Here comes the CLV to provide a single number for a customer with which we can create a list of customers worth retaining

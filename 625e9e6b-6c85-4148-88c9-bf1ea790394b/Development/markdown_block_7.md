@@ -1,0 +1,1 @@
+I cna see some multicollinearity between two features. Frequency getting more weights than monetary as they both have some overlapping signal. SO checking the mulitcollinearity using VIF and Pearson correlation coefficinet just to confirm

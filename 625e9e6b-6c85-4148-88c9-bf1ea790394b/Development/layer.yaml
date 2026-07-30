@@ -6,8 +6,28 @@ blocks:
 - auto_size: false
   canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
   compute_settings: null
-  description: Explains the need to calculate customer lifetime value (LTV) as the
-    foundation for identifying high-priority customers to target for retention efforts.
+  description: "Identifies top 50 customers by expected revenue at risk (CLV \xD7\
+    \ churn probability). Creates a retention priority ranking with segment breakdown,\
+    \ CLV concentration stats, and visualizations showing at-risk customers vs. all\
+    \ customers."
+  height: 1000
+  id: 0d3b071f-d893-42f5-a950-54f87a71b8c7
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  name: retention_priority_list
+  parent_id: null
+  properties: {}
+  status: 3
+  type: 1
+  variables: null
+  width: 1600
+  x: 8000
+  y: 6000
+- auto_size: false
+  canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  compute_settings: null
+  description: Explains Customer Lifetime Value (CLV) as a metric to identify high-value
+    customers for retention, complementing RFM analysis by quantifying revenue contribution
+    per customer.
   height: 1000
   id: 0d70a989-12ee-4643-aabb-8ed70d48719c
   layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
@@ -20,6 +40,41 @@ blocks:
   width: 1600
   x: 4000
   y: 2500
+- auto_size: false
+  canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  compute_settings: null
+  description: Investigates multicollinearity between Frequency and Monetary features
+    using VIF and Pearson correlation to confirm overlapping signal patterns.
+  height: 1000
+  id: 15da531f-3840-4c4a-a74e-c8df130c9087
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  name: markdown_block_7
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 4
+  variables: null
+  width: 1600
+  x: 4000
+  y: 5000
+- auto_size: false
+  canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  compute_settings: null
+  description: Analyzes multicollinearity between Frequency and Monetary RFM metrics
+    using Pearson correlation, VIF, scatter plots, and bar charts to assess whether
+    the two features are redundant for predictive modeling.
+  height: 1000
+  id: 226af773-5798-4bb7-b507-6b54d8ab16c4
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  name: rfm_multicollinearity_analysis
+  parent_id: null
+  properties: {}
+  status: 3
+  type: 1
+  variables: null
+  width: 1600
+  x: 4000
+  y: 5500
 - auto_size: false
   canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
   compute_settings: null
@@ -41,6 +96,77 @@ blocks:
 - auto_size: false
   canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
   compute_settings: null
+  description: "Displays CLV metrics: top 50 customers generate \xA39.3M (24.7% of\
+    \ total), with full customer base of 5,878 worth \xA337.5M."
+  height: 1000
+  id: 27b9c4c6-a8ee-47aa-87f0-78e64057135c
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  name: markdown_block_11
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 4
+  variables: null
+  width: 1600
+  x: 8000
+  y: 6500
+- auto_size: false
+  canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  compute_settings: null
+  description: "Trains a logistic regression model to predict customer churn using\
+    \ Frequency and Monetary features. Achieves 99.8% test accuracy, evaluates performance\
+    \ with confusion matrix and coefficients, and assigns churn probability scores\
+    \ (0\u20131) to all customers for risk identification."
+  height: 1000
+  id: 3210c0be-7ad9-4d5e-bd4b-f3bc0d0b1e7e
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  name: churn_prediction_model
+  parent_id: null
+  properties: {}
+  status: 3
+  type: 1
+  variables: null
+  width: 1600
+  x: 4000
+  y: 4500
+- auto_size: false
+  canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  compute_settings: null
+  description: Uses Random Forest to detect non-linear relationships between features
+    and improve prediction accuracy by capturing complex variable interactions.
+  height: 1000
+  id: 3c349476-da32-4b9c-9da0-6a6174e8538f
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  name: markdown_block_9
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 4
+  variables: null
+  width: 1600
+  x: 4000
+  y: 6500
+- auto_size: false
+  canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  compute_settings: null
+  description: "Explains customer segmentation strategy based on CLV and purchase\
+    \ frequency\u2014prioritizing lost-high value and at-risk customers for retention\
+    \ while managing loyal and attention-needed segments."
+  height: 1000
+  id: 459609f1-f8c3-440e-91ec-10df97c27a17
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  name: markdown_block_5
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 4
+  variables: null
+  width: 1600
+  x: 4000
+  y: 3500
+- auto_size: false
+  canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  compute_settings: null
   description: 'Performs a comprehensive data quality assessment on raw retail transaction
     data: counts rows/columns, data types, missing values, duplicates, and flags invalid
     records (zero/negative quantities, prices, missing customer IDs, cancellations).'
@@ -56,6 +182,24 @@ blocks:
   width: 1600
   x: 2000
   y: 0
+- auto_size: false
+  canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  compute_settings: null
+  description: Trains a Random Forest classifier to predict customer churn and compares
+    performance against a baseline Logistic Regression model. Generates metrics, feature
+    importances, and a 4-panel visualization dashboard.
+  height: 1000
+  id: 5154e974-b8f7-43f2-9e83-80579e6e764f
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  name: random_forest_churn_model
+  parent_id: null
+  properties: {}
+  status: 3
+  type: 1
+  variables: null
+  width: 1600
+  x: 6000
+  y: 5500
 - auto_size: false
   canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
   compute_settings: null
@@ -96,6 +240,42 @@ blocks:
 - auto_size: false
   canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
   compute_settings: null
+  description: 'Explains why Frequency outpredicts Monetary for churn: recency of
+    engagement matters more than historical value. Confirms the relationship is genuine
+    using VIF multicollinearity analysis (1.65).'
+  height: 1000
+  id: 85b86e6d-1b9d-4877-bde8-301b07372c93
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  name: markdown_block_8
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 4
+  variables: null
+  width: 1600
+  x: 4000
+  y: 6000
+- auto_size: false
+  canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  compute_settings: null
+  description: Calculates Customer Lifetime Value (CLV) for each customer using RFM
+    segmentation, churn analysis, and purchase history. Outputs customer-level CLV
+    scores and segment summaries with visualizations showing avg CLV ranked by segment.
+  height: 1000
+  id: 8c4dfd1a-271a-45a1-820f-6bb103cabe96
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  name: rfm_clv_analysis
+  parent_id: null
+  properties: {}
+  status: 3
+  type: 1
+  variables: null
+  width: 1600
+  x: 4000
+  y: 3000
+- auto_size: false
+  canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  compute_settings: null
   description: Cleans transaction data by removing nulls, duplicates, and invalid
     records; computes RFM (Recency, Frequency, Monetary) metrics for each customer;
     assigns quartile scores and segments them into 8 strategic groups (Champions,
@@ -116,6 +296,23 @@ blocks:
 - auto_size: false
   canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
   compute_settings: null
+  description: Explains why Random Forest underperformed logistic regression and why
+    logistic regression was selected as the final model for churn prediction.
+  height: 1000
+  id: 9fabad85-1d4d-419f-9291-54c941832800
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  name: markdown_block_10
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 4
+  variables: null
+  width: 1600
+  x: 6000
+  y: 6000
+- auto_size: false
+  canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  compute_settings: null
   description: 'Justifies data cleaning strategy: Remove rows with missing customer
     IDs (22%), zero/negative quantities or prices, and cancelled transactions to create
     a clean dataset for predictive analysis.'
@@ -131,6 +328,23 @@ blocks:
   width: 1600
   x: 4000
   y: -500
+- auto_size: false
+  canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  compute_settings: null
+  description: 'Explains the next step: building a logistic regression model to calculate
+    churn probability and measure expected revenue at risk.'
+  height: 1000
+  id: bbf17ff5-74dd-4da2-a12b-56cd121ceeb9
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  name: markdown_block_6
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 4
+  variables: null
+  width: 1600
+  x: 4000
+  y: 4000
 - auto_size: false
   canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
   compute_settings: null
@@ -154,9 +368,9 @@ blocks:
 - auto_size: false
   canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
   compute_settings: null
-  description: 'Explains RFM (Recency, Frequency, Monetary) customer segmentation
-    methodology: calculates days since last purchase, counts unique invoices per customer,
-    measures average spend, and ranks each metric in quartiles (4=best, 1=lowest).'
+  description: 'Explains RFM analysis: Recency (days since last purchase), Frequency
+    (unique invoice count), and Monetary (average spend). Each metric scored by quartile
+    (4=best, 1=lowest).'
   height: 1000
   id: e9f21a27-f170-4f92-baa6-f467a61749e4
   layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
@@ -176,10 +390,30 @@ edges:
   source: e528742b-54ba-4a6b-9ee9-b8fd4564d317
   target: 62220cb9-db2e-4d88-b195-d4f0fb42ae47
 - canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  id: 3468c9d9-3a99-425f-90a9-9cbf5953e1f3
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  source: 9fabad85-1d4d-419f-9291-54c941832800
+  target: 0d3b071f-d893-42f5-a950-54f87a71b8c7
+- canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
   id: 394ddc37-d03a-4e3d-9b1b-fec4891dff8c
   layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
   source: b19e5339-c1bf-4af5-a254-38d73dd86f6d
   target: e528742b-54ba-4a6b-9ee9-b8fd4564d317
+- canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  id: 3c60855e-ba01-4c35-8223-9ea229c97947
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  source: 0d70a989-12ee-4643-aabb-8ed70d48719c
+  target: 8c4dfd1a-271a-45a1-820f-6bb103cabe96
+- canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  id: 41253a89-eee2-45b5-925b-14d46dd11904
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  source: 85b86e6d-1b9d-4877-bde8-301b07372c93
+  target: 3c349476-da32-4b9c-9da0-6a6174e8538f
+- canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  id: 439c14f0-6487-4b9e-84f6-37eb0eeb7c38
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  source: 0d3b071f-d893-42f5-a950-54f87a71b8c7
+  target: 27b9c4c6-a8ee-47aa-87f0-78e64057135c
 - canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
   id: 4bff8abc-db74-4c6e-ab3f-154a96ddd44c
   layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
@@ -191,20 +425,60 @@ edges:
   source: 62220cb9-db2e-4d88-b195-d4f0fb42ae47
   target: 2607920f-957f-4601-b412-96975fef721f
 - canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  id: 77158a95-9545-415c-a79b-6585aab977ed
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  source: 459609f1-f8c3-440e-91ec-10df97c27a17
+  target: bbf17ff5-74dd-4da2-a12b-56cd121ceeb9
+- canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  id: 7cd614de-d6ab-46c5-8e7a-fbc4ea6ffe7c
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  source: 15da531f-3840-4c4a-a74e-c8df130c9087
+  target: 226af773-5798-4bb7-b507-6b54d8ab16c4
+- canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
   id: afeee689-f2ff-42e3-b689-eb514d51d94a
   layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
   source: 5d1db65a-6542-4758-b946-e725e4ea5503
   target: 46ee48e3-81a6-4da1-a440-ae7e9259290a
+- canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  id: b97a8b46-345d-4cfe-859f-dab21902a716
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  source: 8c4dfd1a-271a-45a1-820f-6bb103cabe96
+  target: 459609f1-f8c3-440e-91ec-10df97c27a17
 - canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
   id: b9e40369-6a5b-4105-8bad-678467466287
   layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
   source: e9f21a27-f170-4f92-baa6-f467a61749e4
   target: 0d70a989-12ee-4643-aabb-8ed70d48719c
 - canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  id: cbd7896a-d4aa-4d61-a741-04faf1e24825
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  source: 226af773-5798-4bb7-b507-6b54d8ab16c4
+  target: 85b86e6d-1b9d-4877-bde8-301b07372c93
+- canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  id: cdc89604-2133-4fc0-8fd0-78d6d850073d
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  source: bbf17ff5-74dd-4da2-a12b-56cd121ceeb9
+  target: 3210c0be-7ad9-4d5e-bd4b-f3bc0d0b1e7e
+- canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  id: ee0eae37-edfb-419f-881f-acfc71433c7e
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  source: 226af773-5798-4bb7-b507-6b54d8ab16c4
+  target: 5154e974-b8f7-43f2-9e83-80579e6e764f
+- canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
   id: f0ec933c-a1d6-441b-9c1b-60c307ce4b39
   layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
   source: 2607920f-957f-4601-b412-96975fef721f
   target: 8c886c1c-8db8-45a4-a487-332e1307f52f
+- canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  id: f7a14b0e-73dd-44ea-b585-d27668b51090
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  source: 5154e974-b8f7-43f2-9e83-80579e6e764f
+  target: 9fabad85-1d4d-419f-9291-54c941832800
+- canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
+  id: fb5143fc-52fa-4dda-8758-91579dd038c4
+  layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a
+  source: 3210c0be-7ad9-4d5e-bd4b-f3bc0d0b1e7e
+  target: 15da531f-3840-4c4a-a74e-c8df130c9087
 - canvas_id: 625e9e6b-6c85-4148-88c9-bf1ea790394b
   id: ff9cab5d-57f0-4884-b15f-5bcef4eb6f5c
   layer_id: d1031430-fa66-41e6-b1a6-ab16d8dc559a

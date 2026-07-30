@@ -1,0 +1,1 @@
+Random Forest Model to check if the features have non linear relationship and improve prediction accuracy by capturing complex interactions between variables.
