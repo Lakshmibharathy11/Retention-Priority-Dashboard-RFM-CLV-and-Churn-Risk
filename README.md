@@ -97,6 +97,29 @@ RFM describes behaviour but not the financial value of retaining a customer. Thi
 
 Customer tenure is calculated from first to last purchase. For customers with only one recorded purchase, the dataset span is used as a conservative fallback. The churn rate implied by the 138-day rule is used to estimate average lifespan.
 
+### K-means customer segmentation (extension)
+
+The rule-based RFM segments use fixed quartile cut-offs. To check whether the data itself groups customers differently, I added an unsupervised view (`kmeans_segmentation.py`).
+
+**Method**
+- Same cleaning rules as the RFM step: 1,067,371 raw rows → 779,425 clean rows → 5,878 customers.
+- Feature transformation: RFM values are heavily right-skewed (Monetary skew 25.07, Frequency 12.64), so I applied `log1p` and standardized them. Skew after the log transform: Monetary 0.27, Frequency 1.00, Recency −0.55.
+- Choosing k: tested k = 2 to 8 with silhouette and Davies-Bouldin scores. k = 2 scores highest (silhouette 0.439) but only separates active from lapsed customers. **k = 4** is the best among k ≥ 3 (silhouette 0.365, Davies-Bouldin 0.941) and gives actionable groups.
+- Stability: cluster labels are nearly identical across 5 random seeds (Adjusted Rand Index ≥ 0.996).
+
+**Clusters (k = 4)**
+
+| Cluster | Customers | Revenue share | Median recency | Median orders | Churned (>138 days) |
+|---|---|---|---|---|---|
+| High value, active | 19.0% | 72.1% | 15 days | 13 | 1.5% |
+| Lapsing, mid value | 25.1% | 17.9% | 162 days | 5 | 55.4% |
+| New or occasional, active | 20.9% | 5.9% | 23 days | 3 | 0.0% |
+| Lost, low value | 35.0% | 4.0% | 400 days | 1 | 87.6% |
+
+**Insight:** the lapsing, mid-value cluster holds 17.9% of revenue, and the rule-based method spreads these customers across three different labels (At Risk, Loyal, Lost – High Value). Clustering groups them as one retention audience.
+
+*Churn rate uses the Recency-based 138-day rule, so it describes the clusters rather than validating them.*
+
 ### 5. Churn modelling and validation
 
 The primary model is a class-balanced logistic regression trained with an 80/20 stratified train/test split and `random_state=42`. It uses:
